@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring through Canada-Colombia FTA</title>
+    <style>
+        :root {
+            --primary: #c8102e;
+            --secondary: #00318b;
+            --accent: #ffd700;
+            --light: #f5f5f5;
+            --dark: #333;
+            --canadian-red: #c8102e;
+            --colombian-yellow: #ffd700;
+            --colombian-blue: #00318b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--canadian-red) 0%, var(--colombian-yellow) 50%, var(--colombian-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .flag-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(200, 16, 46, 0.15) 0%, 
+                rgba(200, 16, 46, 0.15) 25%, 
+                rgba(255, 255, 255, 0.15) 25%, 
+                rgba(255, 255, 255, 0.15) 75%, 
+                rgba(0, 49, 139, 0.15) 75%, 
+                rgba(0, 49, 139, 0.15) 100%);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            left: 0;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 215, 0, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .conclusion {
+            background-color: var(--secondary);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flag-overlay"></div>
+        <div class="header-content">
+            <h1>Hiring through the FTA between Colombia and Canada</h1>
+            <p>Position: Automotive Service Mechanics Foreman/Woman</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h3>1. Introduction to the Colombia-Canada FTA</h3>
+            <ul>
+                <li>The Free Trade Agreement (FTA) between Colombia and Canada came into effect on <span class="highlight">August 15, 2011</span>.</li>
+                <li>This agreement not only facilitates trade in goods and services but also promotes <span class="highlight">labor mobility</span> between both countries.</li>
+                <li>It establishes a legal framework for the temporary entry of business persons, professionals, and specialized technicians.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>2. Benefits of the FTA for Labor Mobility</h3>
+            <ul>
+                <li>Simplifies immigration procedures and work permits for qualified Colombians.</li>
+                <li>Does not require a <span class="highlight">Labor Market Impact Assessment (LMIA)</span> for certain professional categories.</li>
+                <li>Allows Canadian companies to hire Colombian talent through more streamlined procedures.</li>
+                <li>Work permits under the FTA can be extended for up to one year and are renewable.</li>
+                <li>Possibility to subsequently apply for permanent residency through provincial programs.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>3. Specific Category: Automotive Service Mechanics Foreman/Woman</h3>
+            
+            <h4 style="margin-top: 1.5rem; color: var(--secondary);">National Occupational Classification (NOC):</h4>
+            <ul>
+                <li>NOC Code: <span class="highlight">72024</span> (Automotive Service Mechanics Foreman/Woman)</li>
+                <li>Skill Level: <span class="highlight">B</span> (Technician/Technologist)</li>
+                <li>This classification is specifically included in the professional annex of the Colombia-Canada FTA.</li>
+            </ul>
+            
+            <h4 style="margin-top: 1.5rem; color: var(--secondary);">Specific Requirements for this Position:</h4>
+            <ul>
+                <li>Diploma or certificate in automotive mechanics or related field</li>
+                <li>Minimum 2 years of experience in the automotive sector.</li>
+                <li>Specialized technical knowledge in diagnosis, repair, and maintenance of vehicles</li>
+            </ul>
+            
+            <h4 style="margin-top: 1.5rem; color: var(--secondary);">Specific Documentation Required:</h4>
+            <ul>
+                <li>Apostilled academic degree or certificate</li>
+                <li>Letters of recommendation and employment certificates demonstrating supervisory experience</li>
+                <li>Formal job offer from the Canadian company specifying the Foreman/Woman position</li>
+                <li>Documentation demonstrating compliance with provincial licensing requirements (if applicable)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>5. Hiring Process through the FTA</h3>
+            <ul>
+                <li>Formal job offer from the Canadian company</li>
+                <li>Preparation of specific documentation for TN visa (FTA Professional)</li>
+                <li>Application to the Canadian consulate in Colombia or at the port of entry to Canada</li>
+                <li>Estimated processing times (generally faster than other programs)</li>
+                <li>Support from a specialized consultant throughout the process</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>6. Benefits for the Canadian Company</h3>
+            <ul>
+                <li>Faster hiring process compared to other immigration pathways</li>
+                <li>Cost savings by avoiding the LMIA process</li>
+                <li>Hiring personnel with specific experience in the automotive sector</li>
+                <li>Potential knowledge transfer and techniques from the Colombian market</li>
+                <li>Possibility of long-term retention through permanent residency sponsorship</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>7. Next Steps and Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Confirmation of Interest</h4>
+                        <p>Immediate</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Document Preparation</h4>
+                        <p>2-3 weeks</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>FTA Permit Application</h4>
+                        <p>1-2 weeks</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Immigration Process</h4>
+                        <p>1-2 months</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Position Integration</h4>
+                        <p>Proposed date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="conclusion">
+            <h3 style="color: white; border-bottom: 2px solid var(--accent);">Conclusion</h3>
+            <p>The FTA between Colombia and Canada offers an efficient and legal pathway for my hiring as an Automotive Service Mechanics Foreman/Woman, benefiting both me as a Colombian professional and the Canadian company seeking specialized talent in the automotive sector.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 - Hiring Proposal through Colombia-Canada FTA.</p>
+        <p>Website created by Jairo Andres Buelvas Marquez.</p>
+
+    </footer>
+</body>
+</html>
